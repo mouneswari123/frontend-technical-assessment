@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ReactFlow default */
+@import "reactflow/dist/style.css";
+
+/* Full page gradient background (entire site) */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(900px 600px at 10% 10%, rgba(99, 102, 241, 0.22), transparent 60%),
+              radial-gradient(900px 600px at 85% 20%, rgba(168, 85, 247, 0.18), transparent 60%),
+              radial-gradient(900px 600px at 55% 95%, rgba(236, 72, 153, 0.14), transparent 60%),
+              linear-gradient(to bottom, #ffffff, #f8fafc, #ffffff);
+}
+
+/* ReactFlow base tweaks */
+.react-flow__attribution { display: none !important; }
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid white !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+.react-flow__handle-connecting { transform: scale(1.05); }
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/60 shadow-soft rounded-2xl;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 active:scale-[0.99];
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-2xl bg-indigo-600 px-6 py-3 text-white font-semibold shadow-card hover:bg-indigo-700;
+  }
+  .sidebar-item {
+    @apply w-full flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50;
+  }
+  
+}
+
+
